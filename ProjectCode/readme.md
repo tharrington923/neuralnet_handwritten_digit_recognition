@@ -12,12 +12,6 @@ Clone the repository from GitHub using:
 
 $ git clone https://github.com/tharrington923/neuralnet_handwritten_digit_recognition
 
-In order to build the code, load the necessary modules using:
-
-$ module load gcc/5.2.0
-
-$ module load cmake/3.6.0
-
 Move to the build directory to build the code.
 
 $ cd ProjectCode/build/
