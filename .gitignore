@@ -5,17 +5,7 @@
 cmake_install.cmake
 CMakeCache.txt
 
-
-guiCode/build
-
-
-projectCode_GPU/data/*.pkl
-projectCode_GPU/data/*train_set*
-
-
-ProjectCode/build/
 ProjectCode/build/CMakeFiles/
-ProjectCode/bin/*
 ProjectCode/bin/neuralNet
 ProjectCode/bin/neuralNet_p
 ProjectCode/testfunctions

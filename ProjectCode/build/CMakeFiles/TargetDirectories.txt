@@ -1,6 +1,0 @@
-/Users/Tom/Documents/ScientificProgrammingC++/FinalProject/Project/ProjectCode/build/CMakeFiles/edit_cache.dir
-/Users/Tom/Documents/ScientificProgrammingC++/FinalProject/Project/ProjectCode/build/CMakeFiles/rebuild_cache.dir
-/Users/Tom/Documents/ScientificProgrammingC++/FinalProject/Project/ProjectCode/build/CMakeFiles/testfunctions.dir
-/Users/Tom/Documents/ScientificProgrammingC++/FinalProject/Project/ProjectCode/build/CMakeFiles/neuralNet_p_printimages.dir
-/Users/Tom/Documents/ScientificProgrammingC++/FinalProject/Project/ProjectCode/build/CMakeFiles/neuralNet_p.dir
-/Users/Tom/Documents/ScientificProgrammingC++/FinalProject/Project/ProjectCode/build/CMakeFiles/neuralNet.dir
