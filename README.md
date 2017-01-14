@@ -22,6 +22,7 @@ My neural network is implemented as an object of a custom Network class. The Net
 
 The figure below shows the UML diagram for the classes used in the network code.
 ![](https://github.com/tharrington923/neuralnet_handwritten_digit_recognition/blob/master/UMLnetwork.jpg)
+
 The figure below contains the global helper functions used in the Network class.
 ![](https://github.com/tharrington923/neuralnet_handwritten_digit_recognition/blob/master/helperFunction.jpg)
 
