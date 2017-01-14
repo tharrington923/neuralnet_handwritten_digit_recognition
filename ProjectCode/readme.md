@@ -24,8 +24,7 @@ $ cd ProjectCode/build/
 
 Use the following command to generate the Makefile:
 
-$ cmake -G "Unix Makefiles" -D CMAKE_C_COMPILER=/gpfs/runtime/opt/gcc/5.2.0/bin/gcc
-  -D CMAKE_CXX_COMPILER=/gpfs/runtime/opt/gcc/5.2.0/bin/c++ CMakeLists.txt
+$ cmake CMakeLists.txt
 
 Now, run make.
 
