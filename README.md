@@ -14,3 +14,32 @@ The goal of this project was to learn about machine learning and achieve compute
 
 Using basic neural networks, digit recognition software with a high success rate (>90%) can be accomplished in a short period of time.
 
+# Code Description
+
+The network code consists of all the code used to create and train a neural network. In the code repository, the code in the \textit{ProjectCode} directory will be referred to as network code throughout this report. The network code is composed of two C++ classes, class methods, and helper functions. The fully functioning network code consists of numerous header, $*.hpp$, and $*.cpp$ files that groups related methods together. Our neural network is implemented as an object of a custom Network class. The Network class is the most important class within the network code because the neural network integrated into the GUI is simply an instance of the network class. The Network class was designed to be used to represent a neural network. The Network class code can be found in \textit{network.cpp} and \textit{network.hpp}. Figure \ref{Fig:UMLnetwork} shows the UML diagram for the classes used in the network code. Figure \ref{Fig:UMLhelper} contains the global helper functions used in the Network class.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.70\linewidth]{UMLnetwork.jpg}
+\captionsetup{justification=centering,singlelinecheck=false}
+\caption{The Network Class}
+\label{Fig:UMLnetwork}
+\end{figure}
+
+A neural network is defined by the number of input nodes, the number of hidden layers, the number of nodes in each hidden layer, and the number of nodes in the final layer. For this work, we have chosen a network with a single hidden layer consisting of fifteen nodes. The input layer, defined by the dimensionality of the MNIST data, has 784 ($28 \times 28$) nodes. The output layer is a vector with 10 components. The output layer is a 10 component vector that represents the greyscale values of the output of the network. The component that contains the pixel with the highest greyscale determines the number. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.75\linewidth]{helperFunction.jpg}
+\captionsetup{justification=centering,singlelinecheck=false}
+\caption{Global Helper Functions}
+\label{Fig:UMLhelper}
+\end{figure}
+
+A valid neural network is initialized with weight matrices and bias vectors coming from a normal gaussian distribution. Then, the training images are used to train the network's weights and biases using a method of stochastic gradient descent to minimize the cost function. The network is trained for a specified number of epochs and batch size. An epoch is the single use of the entire training data. The batch size is the number of images used to determine the gradient before updating the network's weights and biases. If the batch size was selected as 1000, the network parameters would be updated 60 times each epoch. If a batch size of 60,000 was selected, the network parameters would be updated one time each epoch.
+
+In the standard Network class training procedure, the gradient for each image in a batch is computed sequentially. Then, the average gradient is calculated and the network's parameters are updated. As a result, training the network is a slow process because the gradient is calculated for each training image (there are 60,000 of these) each epoch. Training the network for only 10 epochs would require calculating the gradient 600,000 times! This does not even include any of the time required to update the network parameters after each batch is processed. Training a neural network with 30 nodes in the hidden layer using a batch size of 10 can take upwards of five minutes per epoch. To circumvent this prohibitively slow training time, a threaded version of the code was written to parallelize the code.
+
+The pNetwork (p used to represent parallelized) class inherits from the Network class as seen in the UML class diagram in Figure \ref{Fig:UMLnetwork}. The virtual methods of the Network class are overwritten in the pNetwork class to utilize threads. The threaded version of stochastic gradient descent distributes the images in each mini-batch to the maximum number of threads available on the system (typically 2x the number of cores). This allows the mini-batch calculations to be performed sequentially. All of the threads update a common gradient variable in each the mini-batch, but the shared variable is locked whenever one of the threads is updating the value. The variable is only locked for a short time while writing, so the threaded code overall is significantly faster than the non-threaded code. When the mini-batch size is larger than the number of threads, the stochastic gradient descent calculations can see up to a factor of 32 speed up when run on a 16 cores machine.
+
+The network class has many useful features to work with the class. After the network is trained, the weights and biases for each layer can be written to a binary file using the \textit{save\_network\_parameters()} method. There is a \textit{load\_network\_parameters()} method to load trained network parameter values. The class also has a method to print the loaded MNIST images, but a discussion of that method can be found in Section \ref{Ref:TE}.
