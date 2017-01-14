@@ -22,6 +22,8 @@ My neural network is implemented as an object of a custom Network class. The Net
 
 Figure \ref{Fig:UMLnetwork} shows the UML diagram for the classes used in the network code. Figure \ref{Fig:UMLhelper} contains the global helper functions used in the Network class.
 
+[[https://github.com/tharrington923/neuralnet_handwritten_digit_recognition/UMLnetwork.jpg]]
+
 \begin{figure}[H]
 \center
 \includegraphics[width=0.70\linewidth]{UMLnetwork.jpg}
