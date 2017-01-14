@@ -16,7 +16,11 @@ Using basic neural networks, digit recognition software with a high success rate
 
 # Code Description
 
-The network code consists of all the code used to create and train a neural network. In the code repository, the code in the \textit{ProjectCode} directory will be referred to as network code throughout this report. The network code is composed of two C++ classes, class methods, and helper functions. The fully functioning network code consists of numerous header, $*.hpp$, and $*.cpp$ files that groups related methods together. Our neural network is implemented as an object of a custom Network class. The Network class is the most important class within the network code because the neural network integrated into the GUI is simply an instance of the network class. The Network class was designed to be used to represent a neural network. The Network class code can be found in \textit{network.cpp} and \textit{network.hpp}. Figure \ref{Fig:UMLnetwork} shows the UML diagram for the classes used in the network code. Figure \ref{Fig:UMLhelper} contains the global helper functions used in the Network class.
+The network code consists of all the code used to create and train a neural network. In the code repository, the code in the ProjectCode directory will be referred to as network code. The network code is composed of two C++ classes, class methods, and helper functions. The fully functioning network code consists of numerous header (*.hpp), and *.cpp files that groups related methods together. 
+
+My neural network is implemented as an object of a custom Network class. The Network class was designed to be used to represent a neural network. The Network class code can be found in network.cpp and network.hpp. 
+
+Figure \ref{Fig:UMLnetwork} shows the UML diagram for the classes used in the network code. Figure \ref{Fig:UMLhelper} contains the global helper functions used in the Network class.
 
 \begin{figure}[H]
 \center
