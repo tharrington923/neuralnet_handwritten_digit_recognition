@@ -10,7 +10,7 @@ $ module load git
 
 Clone the repository from GitHub using:
 
-$ git clone https://github.com/ENGN2912B/GPU_B
+$ git clone https://github.com/tharrington923/neuralnet_handwritten_digit_recognition
 
 In order to build the code, load the necessary modules using:
 
